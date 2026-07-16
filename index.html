@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineMax - Watch Unlimited</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="navbar-brand">
+                <div class="logo">
+                    <i class="fas fa-film"></i>
+                    <span>CineMax</span>
+                </div>
+            </div>
+
+            <div class="nav-center">
+                <a href="#" class="nav-item">Home</a>
+                <a href="#trending" class="nav-item">Trending</a>
+                <a href="#movies" class="nav-item">Movies</a>
+                <a href="#shows" class="nav-item">Shows</a>
+            </div>
+
+            <div class="nav-right">
+                <div class="search-container">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="searchInput" class="search-input" placeholder="Search titles...">
+                </div>
+                <button class="user-btn">
+                    <i class="fas fa-bell"></i>
+                </button>
+                <div class="user-profile">
+                    <img src="https://ui-avatars.com/api/?name=User&background=FF6B35&color=fff&bold=true" alt="User">
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Hero Banner -->
+    <section class="hero-section">
+        <div class="hero-slider">
+            <div class="hero-slide active">
+                <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1920&q=80" alt="Hero" class="hero-image">
+                <div class="hero-gradient"></div>
+                <div class="hero-info">
+                    <span class="hero-tag">TRENDING NOW</span>
+                    <h1 class="hero-title">The Ultimate<br>Streaming Experience</h1>
+                    <p class="hero-desc">Experience crystal-clear entertainment with thousands of movies and shows available at your fingertips.</p>
+                    <div class="hero-actions">
+                        <button class="btn-hero primary" id="playBtn">
+                            <i class="fas fa-play"></i> Play Now
+                        </button>
+                        <button class="btn-hero outline">
+                            <i class="fas fa-plus"></i> My List
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trending Section -->
+    <section class="content-section" id="trending">
+        <div class="section-header">
+            <div>
+                <h2 class="section-title">🔥 Trending Now</h2>
+                <p class="section-subtitle">Most watched this week</p>
+            </div>
+            <a href="#" class="see-more">See All →</a>
+        </div>
+        <div class="carousel-wrapper">
+            <button class="carousel-arrow left" onclick="scrollCarousel(this, -1)">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <div class="carousel" id="trendingCarousel"></div>
+            <button class="carousel-arrow right" onclick="scrollCarousel(this, 1)">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+    </section>
+
+    <!-- Movies Section -->
+    <section class="content-section" id="movies">
+        <div class="section-header">
+            <div>
+                <h2 class="section-title">🎬 Top Movies</h2>
+                <p class="section-subtitle">Best movies of all time</p>
+            </div>
+            <a href="#" class="see-more">See All →</a>
+        </div>
+        <div class="carousel-wrapper">
+            <button class="carousel-arrow left" onclick="scrollCarousel(this, -1)">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <div class="carousel" id="moviesCarousel"></div>
+            <button class="carousel-arrow right" onclick="scrollCarousel(this, 1)">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+    </section>
+
+    <!-- Shows Section -->
+    <section class="content-section" id="shows">
+        <div class="section-header">
+            <div>
+                <h2 class="section-title">📺 Popular Movies</h2>
+                <p class="section-subtitle">Binge-worthy shows</p>
+            </div>
+            <a href="#" class="see-more">See All →</a>
+        </div>
+        <div class="carousel-wrapper">
+            <button class="carousel-arrow left" onclick="scrollCarousel(this, -1)">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <div class="carousel" id="showsCarousel"></div>
+            <button class="carousel-arrow right" onclick="scrollCarousel(this, 1)">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+    </section>
+
+    <!-- Video Player Modal -->
+    <div class="modal-overlay" id="videoModal">
+        <div class="video-container">
+            <button class="close-btn" id="closeModal">
+                <i class="fas fa-times"></i>
+            </button>
+            <video id="videoPlayer" controls>
+                <source id="videoSource" src="" type="video/mp4">
+            </video>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer-section">
+        <div class="footer-wrapper">
+            <div class="footer-logo">
+                <i class="fas fa-film"></i>
+                <span>CineMax</span>
+            </div>
+            <div class="footer-links">
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Jobs</a></li>
+                        <li><a href="#">Press</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Help Center</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy</a></li>
+                        <li><a href="#">Terms</a></li>
+                        <li><a href="#">Cookies</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Social</h4>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 CineMax. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
